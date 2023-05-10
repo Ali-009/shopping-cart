@@ -1,8 +1,11 @@
+import MovieSearch from './components/MovieSearch';
 import './App.css';
 
 function App() {
   return (
-    <h1>Hello World!</h1>
+    <div>
+      <MovieSearch />
+    </div>
   )
 }
 
