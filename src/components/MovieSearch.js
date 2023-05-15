@@ -1,5 +1,5 @@
-
 import {useState} from 'react'
+import MY_KEY from '../MY_KEY';
 
 function MovieSearch(){
 
@@ -9,13 +9,13 @@ function MovieSearch(){
     async function submitHandler(e){
         e.preventDefault();
         
-        let fetchedData = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=b6a78c5940e0cb6d88f0018ba51b36d2&query=${searchTerm}`)
+        let fetchedData = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=${MY_KEY}&query=${searchTerm}`)
         
         let response = await fetchedData.json()
         let resultsArray = response.results
 
         setImagePathArray(resultsArray.map((result) => {
-            return `http://image.tmdb.org/t/p/w154/${result.poster_path}`
+            return `http://image.tmdb.org/t/p/w154/${result.backdrop_path}`
         }))
     }
 
