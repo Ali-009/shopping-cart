@@ -1,10 +1,11 @@
-import MovieSearch from './components/MovieSearch';
+import CatalogueDisplay from './components/CatalogueDisplay';
 import './App.css';
+import actionMovies from './movie-data/action-movies'
 
 function App() {
   return (
     <div>
-      <MovieSearch />
+      <CatalogueDisplay movieData={actionMovies}/>
     </div>
   )
 }

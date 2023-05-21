@@ -1,8 +1,18 @@
 import {useState} from 'react'
-import key from '../env'
-//This component describes the movie search function of the website
-function CatalogueDisplay(){
 
+function CatalogueDisplay({movieData}){
+    return(
+        <div className='catalogue-display'>
+            {movieData.map(movie => {
+                return (
+                    <figure key={movie.id}>
+                        <img src={`https://image.tmdb.org/t/p/w300/${movie.posterPath}`} alt={movie.title} />
+                        <figcaption>{movie.title}</figcaption>
+                    </figure>
+                )
+            })}
+        </div>
+    )   
 }
 
-export default MovieSearch;
+export default CatalogueDisplay;

@@ -1,6 +1,19 @@
-.search-results{
-    margin-top: 16px;
+.catalogue-display{
     display: flex;
     flex-flow: row wrap;
-    gap: 16px;
+    gap: 12px;
+}
+
+.catalogue-display figure{
+    margin: 0;
+    width: 150px;
+}
+
+.catalogue-display img{
+    width: 150px;
+    height: auto;
+}
+
+.catalogue-display figcaption{
+    word-break: normal;
 }
