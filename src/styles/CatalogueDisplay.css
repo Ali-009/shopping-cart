@@ -1,3 +1,7 @@
+.catalogue-container > h2 {
+    margin-left: 42px;
+}
+
 .catalogue-display{
     display: flex;
     flex-flow: row wrap;
@@ -7,6 +11,7 @@
 .catalogue-display figure{
     margin: 0;
     width: 150px;
+
 }
 
 .catalogue-display img{
@@ -16,4 +21,11 @@
 
 .catalogue-display figcaption{
     word-break: normal;
+}
+
+.catalogue-display button{
+    height: 24px;
+    border-radius: 50%;
+    align-self: flex-start;
+    margin-top: calc(225px / 2);
 }

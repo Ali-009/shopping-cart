@@ -1,11 +1,12 @@
 import CatalogueDisplay from './components/CatalogueDisplay';
-import './App.css';
+import './styles/App.css';
+import './styles/CatalogueDisplay.css'
 import actionMovies from './movie-data/action-movies'
 
 function App() {
   return (
     <div>
-      <CatalogueDisplay movieData={actionMovies}/>
+      <CatalogueDisplay header='Action Movies' movieData={actionMovies}/>
     </div>
   )
 }
