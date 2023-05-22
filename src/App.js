@@ -1,7 +1,7 @@
 import CatalogueDisplay from './components/CatalogueDisplay';
 import './styles/App.css';
-import './styles/CatalogueDisplay.css'
-import actionMovies from './movie-data/action-movies'
+import './styles/CatalogueDisplay.css';
+import actionMovies from './movie-data/action-movies';
 
 function App() {
   return (
