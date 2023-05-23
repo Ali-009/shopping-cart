@@ -1,29 +1,29 @@
-.catalogue-container > h2 {
+.collection-container > h2 {
     margin-left: 42px;
 }
 
-.catalogue-display{
+.collection-display{
     display: flex;
     flex-flow: row wrap;
     gap: 12px;
 }
 
-.catalogue-display figure{
+.collection-display figure{
     margin: 0;
     width: 150px;
 
 }
 
-.catalogue-display img{
+.collection-display img{
     width: 150px;
     height: auto;
 }
 
-.catalogue-display figcaption{
+.collection-display figcaption{
     word-break: normal;
 }
 
-.catalogue-display button{
+.collection-display button{
     height: 24px;
     border-radius: 50%;
     align-self: flex-start;

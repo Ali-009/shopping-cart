@@ -1,10 +1,11 @@
 import {useState} from 'react'
+import '../styles/CollectionDisplay.css'
 
 function CollectionDisplay({header, movieData, setCurrentSelection}){
 
     const [startIndex, setStartIndex] = useState(0)
     //endIndex marks the number of movies to display on the screen at one time
-    const endIndex = 5;
+    const endIndex = 4;
     const displayedMovies = movieData.slice(startIndex, startIndex + endIndex)
 
     function handleBack(){
@@ -16,7 +17,7 @@ function CollectionDisplay({header, movieData, setCurrentSelection}){
 
     function handleForward(){
         //If all the last five movies are displayed, don't update the startIndex
-        if((startIndex + endIndex) === movieData.length){
+        if((startIndex + endIndex) >= movieData.length){
             return
         }
         
@@ -24,13 +25,13 @@ function CollectionDisplay({header, movieData, setCurrentSelection}){
     }
 
     function handleSelection(e){
-        setCurrentSelection(movieData.find(movie => movie.id === +e.currentTarget.id))
+        setCurrentSelection(displayedMovies.find(movie => movie.id === +e.currentTarget.id))
     }
 
     return(
-        <div className="catalogue-container">
+        <div className='collection-container'>
             <h2>{header}</h2>
-            <div className='catalogue-display'>
+            <div className='collection-display'>
                 <button onClick={handleBack}>←</button>
                 {displayedMovies.map(movie => {
                     return (

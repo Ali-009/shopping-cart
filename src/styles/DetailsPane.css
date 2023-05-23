@@ -1,0 +1,16 @@
+.details-pane{
+    display: flex;
+    flex-flow: column nowrap;
+    width: 400px;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.details-pane img{
+    width: 400px;
+    height: auto;
+}
+
+.release-date h4, .genres h4{
+    display: inline;
+}

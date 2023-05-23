@@ -1,0 +1,5 @@
+.catalogue-page{
+    display: grid;
+    grid-template-columns: 800px 400px;
+    justify-content: center;
+}
