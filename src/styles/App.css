@@ -1,3 +1,7 @@
 body{
     margin: 48px;
 }
+
+.App{
+    display: grid;
+}
