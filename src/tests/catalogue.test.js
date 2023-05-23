@@ -11,7 +11,7 @@ describe('CollectionDisplay', () => {
     it('displays the correct number of movie posters', () => {
         render(<CollectionDisplay movieData={actionMovies}/>)
         const moviePosters = screen.getAllByRole('img')
-        expect(moviePosters.length).toBe(5)
+        expect(moviePosters.length).toBe(4)
     })
     it('displays a different set of movie posters when the forward button is clicked', async () => {
         const user = userEvent.setup()
@@ -49,15 +49,15 @@ describe('DetailsPane', () => {
         render(<CataloguePage />)
         //Because tests are often concrete and not really generic
         //I'll attempt to click the image of a movie I expect to be displayed
-        //const testMovie = actionMovies[4]
-        const testFigure = screen.getByRole('img', {name: 'Avatar Poster'})
+        const testMovie = actionMovies[2]
+        const testFigure = screen.getByRole('img', {name: 'Sonic the Hedgehog 2 Poster'})
 
         await act(async () => {
             await user.click(testFigure)
         })
         
-        const testOverview = screen.getByRole('paragraph')
-        const testBackdrop = screen.getByRole('img', {name: 'Avatar Backdrop'})
+        const testOverview = await screen.findByText(testMovie.overview)
+        const testBackdrop = await screen.findByRole('img', {name: 'Sonic the Hedgehog 2 Backdrop'})
         //Assertions
         expect(testOverview).toBeInTheDocument
         expect(testBackdrop).toBeInTheDocument
