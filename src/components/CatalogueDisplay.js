@@ -31,7 +31,7 @@ function CatalogueDisplay({movieData, header}){
                 {displayedMovies.map(movie => {
                     return (
                         <figure key={movie.id}>
-                            <img src={`https://image.tmdb.org/t/p/w300/${movie.posterPath}`} alt={movie.title} />
+                            <img src={movie.poster} alt={movie.title} />
                             <figcaption>{movie.title}</figcaption>
                         </figure>
                     )
@@ -41,5 +41,4 @@ function CatalogueDisplay({movieData, header}){
         </div>
     )   
 }
-
 export default CatalogueDisplay;

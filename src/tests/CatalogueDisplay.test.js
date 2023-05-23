@@ -4,7 +4,7 @@ import userEvent from '@testing-library/user-event'
 import '@testing-library/jest-dom'
 import {act} from 'react-dom/test-utils'
 import CatalogueDisplay from '../components/CatalogueDisplay'
-import actionMovies from '../movie-data/action-movies'
+import actionMovies from '../assets/action-movies/action-movies-data'
 
 describe('DisplayCatalogue', () => {
     it('displays the correct number of movies', () => {
