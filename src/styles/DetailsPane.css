@@ -1,13 +1,16 @@
 .details-pane{
     display: flex;
     flex-flow: column nowrap;
-    width: 400px;
+    min-width: 200px;
+    max-width: 400px;
     height: 100%;
     overflow-y: auto;
+    margin-top: 70px;
 }
 
 .details-pane img{
-    width: 400px;
+    min-width: 200px;
+    max-width: 400px;
     height: auto;
 }
 

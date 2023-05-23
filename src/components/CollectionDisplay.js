@@ -31,16 +31,19 @@ function CollectionDisplay({header, movieData, setCurrentSelection}){
     return(
         <div className='collection-container'>
             <h2>{header}</h2>
-            <div className='collection-display'>
+            <div className="collection-interface">
                 <button onClick={handleBack}>←</button>
-                {displayedMovies.map(movie => {
-                    return (
-                        <figure key={movie.id} id={movie.id} onClick={handleSelection}>
-                            <img src={movie.poster} alt={movie.title + ' ' + 'Poster'} />
-                            <figcaption>{movie.title}</figcaption>
-                        </figure>
-                    )
-                })}
+                <div className='collection-display'>
+                
+                    {displayedMovies.map(movie => {
+                        return (
+                            <figure key={movie.id} id={movie.id} onClick={handleSelection}>
+                                <img src={movie.poster} alt={movie.title + ' ' + 'Poster'} />
+                                <figcaption>{movie.title}</figcaption>
+                            </figure>
+                        )
+                    })}
+                </div>
                 <button onClick={handleForward}>→</button>
             </div>
         </div>

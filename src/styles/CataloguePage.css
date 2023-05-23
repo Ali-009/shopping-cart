@@ -1,5 +1,5 @@
 .catalogue-page{
     display: grid;
-    grid-template-columns: 800px 400px;
-    justify-content: center;
+    grid-template-columns: minmax(200px,800px) minmax(100px,400px);
+    justify-content:start;
 }
