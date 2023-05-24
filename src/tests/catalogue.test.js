@@ -7,7 +7,7 @@ import CollectionDisplay from '../components/CollectionDisplay'
 import actionMovies from '../assets/action-movies/action-movies-data'
 import CataloguePage from '../pages/CataloguePage'
 
-describe('CollectionDisplay', () => {
+describe('CataloguePage', () => {
     it('displays the correct number of movie posters', () => {
         render(<CollectionDisplay movieData={actionMovies}/>)
         const moviePosters = screen.getAllByRole('img')
@@ -15,6 +15,11 @@ describe('CollectionDisplay', () => {
     })
     it('displays a different set of movie posters when the forward button is clicked', async () => {
         const user = userEvent.setup()
+        //Creating an array of the movie titles of the first four movies
+        let actionMovieTitles = []
+        for(let i=0; i < 4; i++){
+            actionMovieTitles[i] = actionMovies[i].title + ' ' + 'Poster';
+        }
         render(<CollectionDisplay movieData={actionMovies}/>)
         const firstPage = screen.getAllByRole('img').map(poster => poster.getAttribute('alt'))
         //This piece of code needs to wrapped around the act API
@@ -25,6 +30,8 @@ describe('CollectionDisplay', () => {
         //Get the new set of movies
         const secondPage = screen.getAllByRole('img').map(poster => poster.getAttribute('alt'))
         expect(firstPage).not.toEqual(secondPage)
+        //Expect the first page to display the first four movies
+        expect(firstPage).toEqual(actionMovieTitles)
     })
     it('displays the initial set of movie posters when the back button is clicked', async () => {
         const user = userEvent.setup()
@@ -41,9 +48,6 @@ describe('CollectionDisplay', () => {
         //going forward and back again, should land us at the same page
         expect(currentPage).toEqual(firstPage)
     })
-})
-
-describe('DetailsPane', () => {
     it('displays the details of a movie once clicked', async () => {
         const user = userEvent.setup()
         render(<CataloguePage />)
