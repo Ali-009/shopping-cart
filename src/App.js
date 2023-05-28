@@ -4,9 +4,10 @@ import './styles/App.css';
 
 
 function App() {
+  const [cart, setCart] = useState([])
   return (
     <div className='App'>
-      <CataloguePage />
+      <CataloguePage cart={cart} setCart={setCart}/>
     </div>
   )
 }
