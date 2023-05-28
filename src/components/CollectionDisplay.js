@@ -88,7 +88,6 @@ function CollectionDisplay({header, movieData, setCurrentSelection, cart, setCar
                     //If only a single copy of the movie is left in the cart, reducing quantity
                     //should remove the movie from the cart
                     let updatedCart = cart.filter(movie => movie.id !== movieToRemove.id)
-                    console.log(updatedCart)
                     return updatedCart
                 }
             } else {
