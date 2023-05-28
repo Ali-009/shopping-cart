@@ -49,6 +49,7 @@ function CollectionDisplay({header, movieData, setCurrentSelection, cart, setCar
                         return {
                                 id: movie.id,
                                 title: movie.title,
+                                poster: movie.poster,
                                 quantity: findMovie(cart, movie.id).quantity + 1,
                             }
                     } else {
@@ -59,7 +60,8 @@ function CollectionDisplay({header, movieData, setCurrentSelection, cart, setCar
             } else {
                return [...cart, {
                 id: movieToAdd.id,
-                title: movieToAdd.title, 
+                title: movieToAdd.title,
+                poster: movieToAdd.poster, 
                 quantity: 1,
                 }]
             }
@@ -77,6 +79,7 @@ function CollectionDisplay({header, movieData, setCurrentSelection, cart, setCar
                             return {
                                 id: movie.id,
                                 title: movie.title,
+                                poster: movie.poster,
                                 quantity: findMovie(cart, movie.id).quantity - 1
                             } 
                         } else {
