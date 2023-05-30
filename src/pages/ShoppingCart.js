@@ -23,11 +23,19 @@ function ShoppingCart({cart, setCart}){
                             <td className="movie-quantity">
                                 <CartInterface displayedMovies={cart} movie={movie} cart={cart} setCart={setCart}/>
                             </td>
-                            <td className="movie-total-price">{movie.quantity * movie.price}</td>
+                            <td className="movie-total-price" data-testid={`price-${movie.id}`}>{movie.quantity * movie.price}</td>
                         </tr>
                     )
                 }))}
             </tbody>
+            <tfoot>
+                <tr>
+                    <th id='total' colSpan={3}>Total</th>
+                    <td>{cart.length > 0 && cart.reduce((accumulator, currentValue) => {
+                        return accumulator + (currentValue.price * currentValue.quantity)
+                    }, 0)}</td>
+                </tr>
+            </tfoot>
         </table>
     )
 }

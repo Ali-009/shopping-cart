@@ -13,7 +13,7 @@ beforeEach(async () =>{
     const user = userEvent.setup()
     render(<App />, {wrapper: BrowserRouter})
     const cataloguePageLink = screen.getByText('Catalogue')
-    await pushButton(user, cataloguePageLink, 1)
+    await clickElement(user, cataloguePageLink, 1)
 })
 
 describe('Displaying Movie Data', () => {
@@ -75,10 +75,10 @@ describe('Displaying Movie Data', () => {
 })
 
 //An asynchronous function that pushes a given button an n number of times
-async function pushButton(user, button, n){
+async function clickElement(user, element, n){
     for(let i = 0; i < n; i++){
         await act(async () => {
-            await user.click(button)
+            await user.click(element)
         })
     }
 }
@@ -89,7 +89,7 @@ describe('Increases the amount of items in the shopping cart', () => {
         const increaseButton = screen.getByTestId(`increase-${actionMovies[0].id}`)
         const movieQuantity = screen.getByTestId(`quantity-${actionMovies[0].id}`)
     
-        await pushButton(user, increaseButton, 2)
+        await clickElement(user, increaseButton, 2)
     
         expect(+movieQuantity.textContent).toEqual(2)
     })
@@ -101,7 +101,7 @@ describe('Decreases amount of items in the shopping cart', () => {
     beforeEach(async () => {
         const user = userEvent.setup()
         const increaseButton = screen.getByTestId(`increase-${actionMovies[0].id}`)
-        await pushButton(user, increaseButton, 3)
+        await clickElement(user, increaseButton, 3)
     })
 
     it('Decreases the quantity of movies in the shopping cart correctly', async () => {
@@ -109,7 +109,7 @@ describe('Decreases amount of items in the shopping cart', () => {
         const decreaseButton = screen.getByTestId(`decrease-${actionMovies[0].id}`)
         const movieQuantity = screen.getByTestId(`quantity-${actionMovies[0].id}`)
 
-        await pushButton(user, decreaseButton, 2)
+        await clickElement(user, decreaseButton, 2)
 
         expect(+movieQuantity.textContent).toEqual(1)
     })
@@ -119,7 +119,7 @@ describe('Decreases amount of items in the shopping cart', () => {
         const decreaseButton = screen.getByTestId(`decrease-${actionMovies[0].id}`)
         const movieQuantity = screen.getByTestId(`quantity-${actionMovies[0].id}`)
 
-        await pushButton(user, decreaseButton, 3)
+        await clickElement(user, decreaseButton, 3)
 
         expect(+movieQuantity.textContent).toEqual(0)
     })
@@ -128,7 +128,7 @@ describe('Decreases amount of items in the shopping cart', () => {
         const decreaseButton = screen.getByTestId(`decrease-${actionMovies[0].id}`)
         const movieQuantity = screen.getByTestId(`quantity-${actionMovies[0].id}`)
 
-        await pushButton(user, decreaseButton, 6)
+        await clickElement(user, decreaseButton, 6)
 
         expect(+movieQuantity.textContent).toEqual(0)      
     })
