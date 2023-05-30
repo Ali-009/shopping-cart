@@ -5,10 +5,20 @@ import '@testing-library/jest-dom'
 import {act} from 'react-dom/test-utils'
 import actionMovies from '../assets/action-movies/action-movies-data'
 import App from '../App'
+import {BrowserRouter} from 'react-router-dom'
+
+beforeEach(async () =>{
+    //The localStorage should be cleared before performing the tests
+    localStorage.clear()
+    const user = userEvent.setup()
+    render(<App />, {wrapper: BrowserRouter})
+    const cataloguePageLink = screen.getByText('Catalogue')
+    await pushButton(user, cataloguePageLink, 1)
+})
 
 describe('Displaying Movie Data', () => {
-    it('Displays the correct number of movie posters', () => {
-        render(<App />)
+
+    it('Displays the correct number of movie posters', async () => {
         const moviePosters = screen.getAllByRole('img')
         expect(moviePosters.length).toBe(4)
     })
@@ -19,7 +29,6 @@ describe('Displaying Movie Data', () => {
         for(let i=0; i < 4; i++){
             actionMovieTitles[i] = actionMovies[i].title + ' ' + 'Poster';
         }
-        render(<App />)
         const firstPage = screen.getAllByRole('img').map(poster => poster.getAttribute('alt'))
         //This piece of code needs to wrapped around the act API
         //Because it causes an update in the state of a component
@@ -34,7 +43,6 @@ describe('Displaying Movie Data', () => {
     })
     it('Displays the initial set of movie posters when the back button is clicked', async () => {
         const user = userEvent.setup()
-        render(<App />)
         const firstPage = screen.getAllByRole('img').map(poster => poster.getAttribute('alt'))
         await act(async () => {
             await user.click(screen.getByRole('button', {name: '→'}))
@@ -49,7 +57,6 @@ describe('Displaying Movie Data', () => {
     })
     it('Displays the details of a movie once clicked', async () => {
         const user = userEvent.setup()
-        render(<App />)
         //Because tests are often concrete and not really generic
         //I'll attempt to click the image of a movie I expect to be displayed
         const testMovie = actionMovies[2]
@@ -79,7 +86,6 @@ async function pushButton(user, button, n){
 describe('Increases the amount of items in the shopping cart', () => {
     it('Increases the quantities of movies in the shopping cart correctly', async () => {
         const user = userEvent.setup()
-        render(<App />)
         const increaseButton = screen.getByTestId(`increase-${actionMovies[0].id}`)
         const movieQuantity = screen.getByTestId(`quantity-${actionMovies[0].id}`)
     
@@ -94,9 +100,7 @@ describe('Decreases amount of items in the shopping cart', () => {
 
     beforeEach(async () => {
         const user = userEvent.setup()
-        render(<App />)
         const increaseButton = screen.getByTestId(`increase-${actionMovies[0].id}`)
-
         await pushButton(user, increaseButton, 3)
     })
 

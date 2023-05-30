@@ -1,10 +1,9 @@
-import {useState} from 'react'
 import '../styles/DetailsPane.css'
 
 function DetailsPane({currentSelection: movie}){
     return(
         <div className='details-pane'>
-            <img src={movie.backdrop} alt={movie.title + ' ' + 'Backdrop'} />
+            <img src={movie.backdrop} alt={movie.title + ' Backdrop'} />
             <h3 className='title'>{movie.title}</h3>
             <div className='tagline'>{movie.tagline}</div>
             <div className='overview'>

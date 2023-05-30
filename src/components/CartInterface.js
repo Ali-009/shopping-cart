@@ -12,10 +12,16 @@ function CartInterface({displayedMovies, movie, cart, setCart}){
             }
         })
     }
+
+    //A helper function for updating the localStorage with cart data
+    function updateLocalCart(localCartUpdate){
+        localStorage.setItem('cart', JSON.stringify(localCartUpdate))
+    }
     
     function handleCartAdd(e){
         const movieToAdd = findMovie(displayedMovies, +e.target.id)
         setCart(cart => {
+            //If the movie is already in the cart, simply increase its quantity
             if(findMovie(cart, movieToAdd.id)){
                 let updatedCart = cart.map((movie) => {
                     if(movie.id === movieToAdd.id){
@@ -30,15 +36,20 @@ function CartInterface({displayedMovies, movie, cart, setCart}){
                         return movie
                     }
                 })
+                updateLocalCart(updatedCart)
                 return updatedCart
             } else {
-               return [...cart, {
-                id: movieToAdd.id,
-                title: movieToAdd.title,
-                poster: movieToAdd.poster,
-                price: movieToAdd.price, 
-                quantity: 1,
-                }]
+                //If the movie isn't already in the cart, add it as a new item in the cart
+                //With quantity: 1
+                let updatedCart = [...cart, {
+                                                id: movieToAdd.id,
+                                                title: movieToAdd.title,
+                                                poster: movieToAdd.poster,
+                                                price: movieToAdd.price, 
+                                                quantity: 1,
+                                            }]
+                updateLocalCart(updatedCart)
+               return updatedCart
             }
         })
     }
@@ -48,6 +59,7 @@ function CartInterface({displayedMovies, movie, cart, setCart}){
         setCart(cart => {
             if(findMovie(cart, movieToRemove.id)){
                 const movieQuantity = findMovie(cart, movieToRemove.id).quantity
+                //If more than a copy of a movie exists in the cart, simply reduce its quantity by 1
                 if(movieQuantity > 1){
                     let updatedCart = cart.map((movie) => {
                         if(movie.id === movieToRemove.id){
@@ -62,11 +74,14 @@ function CartInterface({displayedMovies, movie, cart, setCart}){
                             return movie
                         }
                     })
+                    updateLocalCart(updatedCart)
                     return updatedCart
                 } else  if (movieQuantity === 1){
                     //If only a single copy of the movie is left in the cart, reducing quantity
                     //should remove the movie from the cart
                     let updatedCart = cart.filter(movie => movie.id !== movieToRemove.id)
+                    localStorage.setItem('cart', JSON.stringify(updatedCart))
+                    updateLocalCart(updatedCart)
                     return updatedCart
                 }
             } else {
