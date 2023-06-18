@@ -1,3 +1,8 @@
+.collection-container{
+    background-color: white;
+    padding: 32px;
+}
+
 .collection-container > h2 {
     margin: 20px 0px 20px 42px;
     height: 30px;
@@ -12,8 +17,7 @@
 
 .collection-display{
     display: flex;
-    gap: 12px;
-    width: 750px;
+    gap: 32px;
 }
 
 .collection-display figure{
@@ -22,7 +26,7 @@
 
 }
 
-.collection-display img{
+.collection-display figure > img{
     width: 150px;
     height: auto;
 }
@@ -32,6 +36,12 @@
 }
 
 .collection-interface button{
-    height: 24px;
-    border-radius: 50%;
+    appearance: none;
+    outline: none;
+    border: none;
+    background-color: white;
+}
+
+.collection-interface button > img{
+    height: 32px;
 }

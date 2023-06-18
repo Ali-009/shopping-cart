@@ -16,9 +16,14 @@ function App() {
     <div className='App'>
       <nav className='navbar'>
         <ul>
-          <li><Link to='/'>Home</Link></li>
-          <li><Link to='/catalogue'>Catalogue</Link></li>
-          <li><Link to='/shopping-cart'>Shopping Cart</Link></li>
+          <li className='navbar-home'><Link to='/'>Home</Link></li>
+          <li className='navbar-catalogue'><Link to='/catalogue'>Catalogue</Link></li>
+          <li className='navbar-cart'>
+            <Link to='/shopping-cart'>
+              Shopping Cart 
+           </Link>
+           {`  ${cart.reduce((sum, currentItem) => sum + (currentItem.price * currentItem.quantity), 0)}$`}
+          </li>
         </ul>
       </nav>
       <Routes>

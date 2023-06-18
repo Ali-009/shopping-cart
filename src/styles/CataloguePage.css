@@ -1,6 +1,6 @@
 .catalogue-page{
     display: grid;
-    grid-template-columns: 725px min-content;
+    grid-template-columns: 842px min-content;
     justify-content: center;
-    gap: 92px;
+    height: 100%;
 }

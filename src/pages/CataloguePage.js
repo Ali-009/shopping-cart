@@ -9,8 +9,8 @@ function CataloguePage({cart, setCart}) {
     return (
       <div className='catalogue-page'>
         <CollectionDisplay header='Action Movies' 
-        movieData={actionMovies} setCurrentSelection={setCurrentSelection}
-        cart={cart} setCart={setCart} currentSelection={currentSelection}/>
+        movieData={actionMovies} currentSelection={currentSelection}
+        setCurrentSelection={setCurrentSelection} cart={cart} setCart={setCart}/>
         {currentSelection && <DetailsPane currentSelection={currentSelection}/>}
       </div>
     )

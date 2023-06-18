@@ -1,8 +1,10 @@
 import {useState} from 'react'
 import CartInterface from './CartInterface'
 import '../styles/CollectionDisplay.css'
+import backwardIcon from '../assets/icons/chevron_left.png'
+import forwardIcon from '../assets/icons/chevron_right.png'
 
-function CollectionDisplay({header, movieData, setCurrentSelection, cart, setCart, currentSelection}){
+function CollectionDisplay({header, movieData, currentSelection, setCurrentSelection, cart, setCart}){
 
     const [startIndex, setStartIndex] = useState(0)
     //endIndex marks the number of movies to display on the screen at one time
@@ -49,7 +51,9 @@ function CollectionDisplay({header, movieData, setCurrentSelection, cart, setCar
         <div className='collection-container'>
             <h2>{header}</h2>
             <div className="collection-interface">
-                <button onClick={handleBack}>←</button>
+                <button onClick={handleBack}>
+                    <img src={backwardIcon} alt="Scroll Backward"/>
+                </button>
                 <div className='collection-display'>
                     {displayedMovies.map(movie => {
                         return (
@@ -62,7 +66,9 @@ function CollectionDisplay({header, movieData, setCurrentSelection, cart, setCar
                         )
                     })}
                 </div>
-                <button onClick={handleForward}>→</button>
+                <button onClick={handleForward}>
+                    <img src={forwardIcon} alt="Scroll Forward"/>
+                </button>
             </div>
         </div>
     )   

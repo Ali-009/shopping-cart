@@ -94,12 +94,12 @@ function CartInterface({displayedMovies, movie, cart, setCart}){
 
     return (
     <div className="cart-interface">
-        <button id={movie.id} data-testid={`increase-${movie.id}`} onClick={handleCartAdd}>+</button>
+        <button id={movie.id} data-testid={`decrease-${movie.id}`} onClick={handleCartRemove}>-</button>
         <span data-testid={`quantity-${movie.id}`}>
             {cart.length > 0 && findMovie(cart, movie.id) 
             ? findMovie(cart, movie.id).quantity : 0}
         </span>
-        <button id={movie.id} data-testid={`decrease-${movie.id}`} onClick={handleCartRemove}>-</button>
+        <button id={movie.id} data-testid={`increase-${movie.id}`} onClick={handleCartAdd}>+</button>
     </div>
     )
 }

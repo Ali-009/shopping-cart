@@ -1,18 +1,24 @@
 .details-pane{
-    display: flex;
-    flex-flow: column nowrap;
-    min-width: 200px;
-    max-width: 400px;
-    height: 100%;
-    overflow-y: auto;
-    margin-top: 20px;
+    background-color: #242331;
+    color: white;
+}
+
+.details-text-container{
+    padding: 32px;
 }
 
 .details-pane img{
-    width: 400px;
-    height: auto;
+    width: 500px;
+}
+
+.overview h4{
+    margin: 32px 0px 16px 0px;
 }
 
 .release-date h4, .genres h4{
     display: inline;
+}
+
+.release-date{
+    margin: 22px 0px;
 }

@@ -19,7 +19,7 @@ beforeEach(async () =>{
 describe('Displaying Movie Data', () => {
 
     it('Displays the correct number of movie posters', async () => {
-        const moviePosters = screen.getAllByRole('img')
+        const moviePosters = screen.getAllByRole('figure')
         expect(moviePosters.length).toBe(4)
     })
     it('Displays a different set of movie posters when the forward button is clicked', async () => {
@@ -29,29 +29,29 @@ describe('Displaying Movie Data', () => {
         for(let i=0; i < 4; i++){
             actionMovieTitles[i] = actionMovies[i].title + ' ' + 'Poster';
         }
-        const firstPage = screen.getAllByRole('img').map(poster => poster.getAttribute('alt'))
+        const firstPage = screen.getAllByRole('figure').map(poster => poster.children[0].getAttribute('alt'))
         //This piece of code needs to wrapped around the act API
         //Because it causes an update in the state of a component
         await act(async () => {
-            await user.click(screen.getByRole('button', {name: '→'}))
+            await user.click(screen.getByRole('button', {name: 'Scroll Forward'}))
         })
         //Get the new set of movies
-        const secondPage = screen.getAllByRole('img').map(poster => poster.getAttribute('alt'))
+        const secondPage = screen.getAllByRole('figure').map(poster => poster.children[0].getAttribute('alt'))
         expect(firstPage).not.toEqual(secondPage)
         //Expect the first page to display the first four movies
         expect(firstPage).toEqual(actionMovieTitles)
     })
     it('Displays the initial set of movie posters when the back button is clicked', async () => {
         const user = userEvent.setup()
-        const firstPage = screen.getAllByRole('img').map(poster => poster.getAttribute('alt'))
+        const firstPage = screen.getAllByRole('figure').map(poster => poster.children[0].getAttribute('alt'))
         await act(async () => {
-            await user.click(screen.getByRole('button', {name: '→'}))
+            await user.click(screen.getByRole('button', {name: 'Scroll Forward'}))
         })
         //Each interaction needs to be wrapped in its own act method
         await act(async () => {
-            await user.click(screen.getByRole('button', {name: '←'}))
+            await user.click(screen.getByRole('button', {name: 'Scroll Backward'}))
         })
-        const currentPage = screen.getAllByRole('img').map(poster => poster.getAttribute('alt'))
+        const currentPage = screen.getAllByRole('figure').map(poster => poster.children[0].getAttribute('alt'))
         //going forward and back again, should land us at the same page
         expect(currentPage).toEqual(firstPage)
     })
