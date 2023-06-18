@@ -6,3 +6,10 @@ html,body{
     margin: 0;
     font-family: 'Roboto', 'sans-serif';
 }
+
+.navbar ul{
+    list-style: none;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+}

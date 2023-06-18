@@ -14,7 +14,7 @@ function App() {
   const [cart, setCart] = useState(initialCart)
   return (
     <div className='App'>
-      <nav>
+      <nav className='navbar'>
         <ul>
           <li><Link to='/'>Home</Link></li>
           <li><Link to='/catalogue'>Catalogue</Link></li>

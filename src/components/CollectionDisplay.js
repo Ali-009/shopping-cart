@@ -2,7 +2,7 @@ import {useState} from 'react'
 import CartInterface from './CartInterface'
 import '../styles/CollectionDisplay.css'
 
-function CollectionDisplay({header, movieData, setCurrentSelection, cart, setCart}){
+function CollectionDisplay({header, movieData, setCurrentSelection, cart, setCart, currentSelection}){
 
     const [startIndex, setStartIndex] = useState(0)
     //endIndex marks the number of movies to display on the screen at one time
@@ -38,7 +38,11 @@ function CollectionDisplay({header, movieData, setCurrentSelection, cart, setCar
     }
 
     function handleSelection(e){
-        setCurrentSelection(findMovie(displayedMovies, +e.target.id))
+        if(findMovie(displayedMovies, +e.target.id) === currentSelection){
+            setCurrentSelection(null)
+        } else {
+            setCurrentSelection(findMovie(displayedMovies, +e.target.id))
+        }
     }
 
     return(
