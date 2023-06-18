@@ -1,24 +1,38 @@
 .details-pane{
     background-color: #242331;
     color: white;
+    padding-bottom: 32px;
 }
 
 .details-text-container{
-    padding: 32px;
+    padding: 0px 32px;
 }
 
 .details-pane img{
     width: 500px;
 }
 
-.overview h4{
+.details-pane .overview{
     margin: 32px 0px 16px 0px;
+    line-height: 1.4rem;
 }
 
-.release-date h4, .genres h4{
+.details-pane .release-date h4, .details-pane .genres h4{
     display: inline;
 }
 
-.release-date{
+.details-pane .release-date{
     margin: 22px 0px;
+}
+
+.details-pane .title{
+    margin-top: 48px;
+    font-size: 28px;
+    text-align: center;
+}
+
+.details-pane .tagline{
+    font-size: 18px;
+    text-align: center;
+    letter-spacing: 3px;
 }

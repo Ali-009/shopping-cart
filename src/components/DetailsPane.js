@@ -8,7 +8,6 @@ function DetailsPane({currentSelection: movie}){
                 <h3 className='title'>{movie.title}</h3>
                 <div className='tagline'>{movie.tagline}</div>
                 <div className='overview'>
-                    <h4>Overview</h4>
                     <p>{movie.overview}</p>
                 </div>
                 <div className='release-date'>

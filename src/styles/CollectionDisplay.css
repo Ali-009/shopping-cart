@@ -4,15 +4,14 @@
 }
 
 .collection-container > h2 {
-    margin: 20px 0px 20px 42px;
+    margin: 20px 0px 20px 54px;
     height: 30px;
 }
 
 .collection-interface{
     display: flex;
-    flex-flow: row nowrap;
     align-items: center;
-    gap: 16px;
+    gap: 12px;
 }
 
 .collection-display{
@@ -27,6 +26,9 @@
 }
 
 .collection-display figure > img{
+    /*Images are inline by default. Inline elements hava a small vertical space to accomodate text on the same line*/
+    /*Making the image a block level element removes this issue*/
+    display: block;
     width: 150px;
     height: auto;
 }
@@ -39,9 +41,32 @@
     appearance: none;
     outline: none;
     border: none;
-    background-color: white;
+    background-color: inherit;
 }
 
 .collection-interface button > img{
     height: 32px;
 }
+
+/*Selector for the div that contains text under the poster*/
+.poster-text-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #242331;
+    color: white;
+    padding: 12px;
+    gap: 16px;
+}
+
+.poster-text-container button{
+    color: white;
+}
+
+.cart-interface{
+    display: flex;
+    flex-flow: column;
+    justify-content: space-evenly;
+    text-align: center;
+}
+

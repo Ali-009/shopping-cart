@@ -8,7 +8,7 @@ function CataloguePage({cart, setCart}) {
     const [currentSelection, setCurrentSelection] = useState(null)
     return (
       <div className='catalogue-page'>
-        <CollectionDisplay header='Action Movies' 
+        <CollectionDisplay header='Action' 
         movieData={actionMovies} currentSelection={currentSelection}
         setCurrentSelection={setCurrentSelection} cart={cart} setCart={setCart}/>
         {currentSelection && <DetailsPane currentSelection={currentSelection}/>}
