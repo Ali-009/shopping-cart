@@ -1,9 +1,19 @@
-
-table.shopping-cart-container{
+.table-container{
     width: 880px;
-    padding: 32px;
+    padding: 48px 64px;
+    box-sizing: border-box;
     background-color: white;
     margin: 0 auto;
+    height: 100%;
+    font-size: 22px;
+}
+
+table.shopping-cart-container{
+    width: 100%;
+}
+
+table.shopping-cart-container .cart-interface{
+    padding: 0;
 }
 
 table.shopping-cart-container img{
@@ -13,5 +23,59 @@ table.shopping-cart-container img{
 
 table.shopping-cart-container .cart-interface{
     display: flex;
-    flex-flow: row;
+    flex-flow: row-reverse;
+    font-size: 24px;
+}
+
+table.shopping-cart-container .cart-interface button{
+    appearance: none;
+    outline: none;
+    border: none;
+    background-color: inherit;
+    padding: 0;
+    font-size: 24px;
+}
+
+table.shopping-cart-container td{
+    height: 128px;
+    padding-bottom: 64px;
+    padding-right: 24px;
+}
+
+table.shopping-cart-container tbody tr:nth-child(1) td{
+    padding-top: 24px;
+}
+
+
+table.shopping-cart-container tr:nth-last-of-type(1) td{
+    padding-bottom: 24px;
+}
+
+table.shopping-cart-container td.movie-title{
+    padding-left: 64px;
+}
+
+table.shopping-cart-container td.movie-poster{
+    padding-left: 32px;
+}
+
+table.shopping-cart-container td.movie-total-price,
+th:nth-of-type(5),
+table.shopping-cart-container tfoot th,
+table.shopping-cart-container tfoot td{
+    text-align: right;
+}
+
+table.shopping-cart-container td.movie-poster > img{
+    display: block;
+    margin: 0 auto;
+}
+
+table.shopping-cart-container tfoot th{
+    padding-right: 32px;
+    padding-bottom: 24px;
+}
+
+table.shopping-cart-container thead th:nth-of-type(5){
+    padding-left: 24px;
 }

@@ -54,6 +54,10 @@ a, a:visited, a:hover, a:active {
     width: 1330px;
 }
 
+.navbar.navbar-view-cart ul{
+    width: 1008px;
+}
+
 .navbar-cart{
     margin-left: auto;
 }
