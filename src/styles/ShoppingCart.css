@@ -39,7 +39,6 @@ table.shopping-cart-container .cart-interface button{
 table.shopping-cart-container td{
     height: 128px;
     padding-bottom: 64px;
-    padding-right: 24px;
 }
 
 table.shopping-cart-container tbody tr:nth-child(1) td{
@@ -53,6 +52,7 @@ table.shopping-cart-container tr:nth-last-of-type(1) td{
 
 table.shopping-cart-container td.movie-title{
     padding-left: 64px;
+    padding-right: 32px;
 }
 
 table.shopping-cart-container td.movie-poster{
@@ -60,7 +60,7 @@ table.shopping-cart-container td.movie-poster{
 }
 
 table.shopping-cart-container td.movie-total-price,
-th:nth-of-type(5),
+th:nth-of-type(4),
 table.shopping-cart-container tfoot th,
 table.shopping-cart-container tfoot td{
     text-align: right;
@@ -76,6 +76,6 @@ table.shopping-cart-container tfoot th{
     padding-bottom: 24px;
 }
 
-table.shopping-cart-container thead th:nth-of-type(5){
+table.shopping-cart-container thead th:nth-of-type(4){
     padding-left: 24px;
 }

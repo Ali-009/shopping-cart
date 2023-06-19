@@ -1,0 +1,27 @@
+.cart-is-empty{
+    width: 880px;
+    padding: 48px 64px;
+    box-sizing: border-box;
+    background-color: white;
+    margin: 0 auto;
+    height: 100%;
+    font-size: 22px;
+
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    gap: 64px;
+}
+
+.cart-is-empty-emote{
+    color: lightgrey;
+    font-size: 192px;
+    cursor: default;
+}
+
+.cart-is-empty-text{
+    color: grey;
+    font-size: 24px;
+    padding: 12px;
+}

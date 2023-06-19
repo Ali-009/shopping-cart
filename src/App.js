@@ -13,7 +13,11 @@ function App() {
     initialCart = JSON.parse(previousCart)
   } 
   const [cart, setCart] = useState(initialCart)
-
+  function handleNavbarWidth(e){
+    if(document.querySelector('.navbar-details-pane')){
+      document.querySelector('.navbar').classList.toggle('navbar-details-pane')
+    }
+  }
   return (
     <div className='App'>
       <nav className='navbar'>
@@ -22,7 +26,7 @@ function App() {
           <li className='navbar-catalogue'><Link to='/catalogue'>Catalogue</Link></li>
           <li className='navbar-cart'>
             <Link to='/shopping-cart'>
-              <img src={cartIcon} alt="Shopping Cart"/> 
+              <img src={cartIcon} alt="Shopping Cart" onClick={handleNavbarWidth}/> 
            </Link>
            {`  ${cart.reduce((sum, currentItem) => sum + (currentItem.price * currentItem.quantity), 0)}$`}
           </li>
