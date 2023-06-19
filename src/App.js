@@ -13,20 +13,31 @@ function App() {
     initialCart = JSON.parse(previousCart)
   } 
   const [cart, setCart] = useState(initialCart)
-  function handleNavbarWidth(e){
-    if(document.querySelector('.navbar-details-pane')){
-      document.querySelector('.navbar').classList.toggle('navbar-details-pane')
+  //A function that removes a class from the navbar if it has it
+  function removeNavbarClass(cssClass){
+    if(document.querySelector(`.${cssClass}`)){
+      document.querySelector('.navbar').classList.remove(cssClass)
     }
+  }
+
+  function displaySmallNavbar(e){
+    //When we navigate to the shopping cart or catalogue, we should remove classes to adjust the width of the navbar
+    removeNavbarClass('navbar-in-homepage')
+    removeNavbarClass('navbar-details-pane')
+  }
+
+  function displayLargeNavbar(e){
+    document.querySelector('.navbar').classList.add('navbar-in-homepage')
   }
   return (
     <div className='App'>
-      <nav className='navbar'>
+      <nav className='navbar navbar-in-homepage'>
         <ul>
-          <li className='navbar-home'><Link to='/'>Home</Link></li>
-          <li className='navbar-catalogue'><Link to='/catalogue'>Catalogue</Link></li>
+          <li className='navbar-home' onClick={displayLargeNavbar}><Link to='/'>Home</Link></li>
+          <li className='navbar-catalogue' onClick={displaySmallNavbar}><Link to='/catalogue'>Catalogue</Link></li>
           <li className='navbar-cart'>
             <Link to='/shopping-cart'>
-              <img src={cartIcon} alt="Shopping Cart" onClick={handleNavbarWidth}/> 
+              <img src={cartIcon} alt="Shopping Cart" onClick={displaySmallNavbar}/> 
            </Link>
            {`  ${cart.reduce((sum, currentItem) => sum + (currentItem.price * currentItem.quantity), 0)}$`}
           </li>

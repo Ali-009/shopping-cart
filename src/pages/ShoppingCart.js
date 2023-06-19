@@ -33,7 +33,7 @@ function ShoppingCart({cart, setCart}){
                     <tfoot>
                         <tr>
                             <th id='total' colSpan={3}>Total</th>
-                            <td>{cart.length > 0 && cart.reduce((accumulator, currentValue) => {
+                            <td data-testid='shopping-cart-total'>{cart.length > 0 && cart.reduce((accumulator, currentValue) => {
                                 return accumulator + (currentValue.price * currentValue.quantity)
                             }, 0)}$</td>
                         </tr>

@@ -55,12 +55,12 @@ describe('Shopping Cart', () => {
         //Each movie is priced at 40$
         //The shopping cart initially has 3 copies of the first movie, so in total all copies cost 120$
         //The shopping cart initially has 2 copies of the second movie, so in total all copies cost 80$
-        expect(+totalPrice1.textContent).toEqual(120)
-        expect(+totalPrice2.textContent).toEqual(80)
+        expect(totalPrice1.textContent).toEqual('120$')
+        expect(totalPrice2.textContent).toEqual('80$')
     })
     it('Displays the correct final total for the purchase', () => {
         //The final total with our setup should be 120 + 80 = 200$
-        const finalTotal = screen.getByText('200')
-        expect(finalTotal).toBeInTheDocument
+        const finalTotal = screen.getByTestId('shopping-cart-total')
+        expect(finalTotal.textContent).toEqual('200$')
     })
 })
