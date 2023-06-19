@@ -1,4 +1,17 @@
-table img{
+
+table.shopping-cart-container{
+    width: 880px;
+    padding: 32px;
+    background-color: white;
+    margin: 0 auto;
+}
+
+table.shopping-cart-container img{
     width: 75px;
     height: auto;
+}
+
+table.shopping-cart-container .cart-interface{
+    display: flex;
+    flex-flow: row;
 }

@@ -30,7 +30,7 @@ beforeEach(async () => {
     const increaseButton2 = screen.getByTestId(`increase-${actionMovies[2].id}`)
     await clickElement(user, increaseButton2, 2)
     //The test now switches to the shopping cart page
-    const shoppingCartLink = screen.getByText('Shopping Cart')
+    const shoppingCartLink = screen.getByRole('img', {name: 'Shopping Cart'})
     await clickElement(user, shoppingCartLink, 1)
 })
 

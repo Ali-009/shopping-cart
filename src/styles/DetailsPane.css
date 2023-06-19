@@ -2,6 +2,7 @@
     background-color: #242331;
     color: white;
     padding-bottom: 32px;
+    width: 450px;
 }
 
 .details-text-container{
@@ -9,7 +10,7 @@
 }
 
 .details-pane img{
-    width: 500px;
+    width: 450px;
 }
 
 .details-pane .overview{
@@ -35,4 +36,5 @@
     font-size: 18px;
     text-align: center;
     letter-spacing: 3px;
+    text-transform: uppercase;
 }

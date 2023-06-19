@@ -6,7 +6,6 @@ html,body{
     margin: 0;
     font-family: 'Roboto', 'sans-serif';
     background-color: #DBE4EE;
-    overflow-x: hidden;
 }
 
 .App, #root{
@@ -41,10 +40,31 @@ a, a:visited, a:hover, a:active {
     
     height: 72px;
     display: flex;
+    width: 880px;
+    box-sizing: border-box;
+    padding: 0px 32px;
     align-items: center;
     justify-content: space-evenly;
+    /*The rule below centers the ul horizontally*/
+    margin: 0 auto;
 }
 
-.navbar li{
-    padding: auto 0;
+/*A selector for navbar when a details pane is displayed*/
+.navbar.navbar-details-pane ul{
+    width: 1330px;
+}
+
+.navbar-cart{
+    margin-left: auto;
+}
+
+.navbar-cart img{
+    width: 32px;
+    height: auto;
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+.navbar-catalogue{
+    margin-left: 64px;
 }

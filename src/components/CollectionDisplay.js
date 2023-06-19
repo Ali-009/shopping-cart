@@ -41,8 +41,13 @@ function CollectionDisplay({header, movieData, currentSelection, setCurrentSelec
 
     function handleSelection(e){
         if(findMovie(displayedMovies, +e.target.id) === currentSelection){
+            document.querySelector('.navbar').classList.toggle('navbar-details-pane')
             setCurrentSelection(null)
         } else {
+            //Make the navbar account for a details, only if it is not already doing so
+            if(!document.querySelector('.navbar-details-pane')){
+                document.querySelector('.navbar').classList.toggle('navbar-details-pane')
+            }
             setCurrentSelection(findMovie(displayedMovies, +e.target.id))
         }
     }

@@ -3,7 +3,7 @@ import '../styles/ShoppingCart.css'
 
 function ShoppingCart({cart, setCart}){
     return(
-        <table>
+        <table className="shopping-cart-container">
             <thead>
                 <tr>
                     <th scope="col">No.</th>

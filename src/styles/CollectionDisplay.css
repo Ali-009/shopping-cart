@@ -6,9 +6,11 @@
 .collection-container > h2 {
     margin: 20px 0px 20px 54px;
     height: 30px;
+    color: #242331;
 }
 
 .collection-interface{
+    width: 800px;
     display: flex;
     align-items: center;
     gap: 12px;
@@ -35,6 +37,7 @@
 
 .collection-display figcaption{
     word-break: normal;
+    font-size: 14px;
 }
 
 .collection-interface button{
@@ -42,9 +45,11 @@
     outline: none;
     border: none;
     background-color: inherit;
+    padding: 0;
 }
 
 .collection-interface button > img{
+    display: block;
     height: 32px;
 }
 
@@ -55,12 +60,13 @@
     align-items: center;
     background-color: #242331;
     color: white;
-    padding: 12px;
+    padding-left: 12px;
     gap: 16px;
 }
 
 .poster-text-container button{
     color: white;
+    font-size: 18px;
 }
 
 .cart-interface{
@@ -68,5 +74,9 @@
     flex-flow: column;
     justify-content: space-evenly;
     text-align: center;
+    padding: 12px;
 }
 
+.cart-interface > .quantity{
+    margin: 6px 0px;
+}
