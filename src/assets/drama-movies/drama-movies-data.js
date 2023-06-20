@@ -1,0 +1,48 @@
+const dramaMovies = [
+    {
+        id: 230,
+        title: "The Godfather",
+        poster: require('./posters/the-godfather-p.jpg'),
+        backdrop: require('./backdrops/the-godfather-b.jpg'),
+        genres: ["Drama", "Crime"],
+        overview: "Spanning the years 1945 to 1955, a chronicle of the fictional Italian-American Corleone crime family. When organized crime family patriarch, Vito Corleone barely survives an attempt on his life, his youngest son, Michael steps in to take care of the would-be killers, launching a campaign of bloody revenge.",
+        tagline: "An offer you can't refuse",
+        releaseDate: "1972-03-14",
+        price: 20,
+    },
+    {
+        id: 278,
+        title: "The Shawshank Redemption",
+        poster: require('./posters/shawshank-redemption-p.jpg'),
+        backdrop: require('./backdrops/shawshank-redemption-b.jpg'),
+        genres: ["Drama", "Crime"],
+        overview: "Framed in the 1940s for the double murder of his wife and her lover, upstanding banker Andy Dufresne begins a new life at the Shawshank prison, where he puts his accounting skills to work for an amoral warden. During his long stretch in prison, Dufresne comes to be admired by the other inmates -- including an older prisoner named Red -- for his integrity and unquenchable sense of hope.",
+        tagline: "Fear can hold you prisoner. Hope can set you free.",
+        releaseDate: "1994-09-23",
+        price: 20,
+    },
+    {
+        id: 937278,
+        title: "A Man Called Otto",
+        poster: require('./posters/a-man-called-otto-p.jpg'),
+        backdrop: require('./backdrops/a-man-called-otto-b.jpg'),
+        genres: ["Comedy", "Drama"],
+        overview: "When a lively young family moves in next door, grumpy widower Otto Anderson meets his match in a quick-witted, pregnant woman named Marisol, leading to an unlikely friendship that turns his world upside down.",
+        tagline: "Fall in love with the grumpiest man in America",
+        releaseDate: "2022-12-28",
+        price: 40,
+    },
+    {
+        id: 597,
+        title: "Titanic",
+        poster: require('./posters/titanic-p.jpg'),
+        backdrop: require('./backdrops/titanic-b.jpg'),
+        genres: ["Drama", "Romance"],
+        overview: "101-year-old Rose DeWitt Bukater tells the story of her life aboard the Titanic, 84 years later. A young Rose boards the ship with her mother and fiancé. Meanwhile, Jack Dawson and Fabrizio De Rossi win third-class tickets aboard the ship. Rose tells the whole story from Titanic's departure through to its death—on its first and last voyage—on April 15, 1912.",
+        tagline: "Nothing on Earth could come between them",
+        releaseDate: "1997-11-18",
+        price: 20,
+    },
+]
+
+export default dramaMovies

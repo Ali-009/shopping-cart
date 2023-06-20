@@ -2,15 +2,15 @@
     background-color: #242331;
     color: white;
     padding-bottom: 32px;
-    width: 450px;
+    width: 100%;
+}
+
+.details-pane > img {
+    width: 100%;
 }
 
 .details-text-container{
     padding: 0px 32px;
-}
-
-.details-pane img{
-    width: 450px;
 }
 
 .details-pane .overview{

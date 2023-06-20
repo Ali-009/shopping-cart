@@ -1,6 +1,34 @@
 .catalogue-page{
     display: grid;
-    grid-template-columns: 880px min-content;
-    justify-content: center;
+    width: 1200px;
+    background-color: white;
+    grid-template-columns: 750px 450px;
     height: 100%;
+
+    /*The catalogue page is also part of an overarching grid*/
+    justify-self: center;
+    /*Make the .collections-column and .details-pane scroll seperately*/
+    overflow-y: hidden;
+}
+
+.collections-column{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    /*Make the collection column scrollable on its own*/
+    overflow-y: scroll;
+}
+
+.details-pane{
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+    overflow-y: hidden;
+}
+
+.details-text-container{
+    overflow-y: scroll;
+    padding-bottom: 48px;
 }

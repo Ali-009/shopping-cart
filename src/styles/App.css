@@ -30,6 +30,7 @@ a, a:visited, a:hover, a:active {
     font-size: 18px;
     font-weight: bold;
     height: auto;
+    width: 100%;
 }
 
 .navbar ul{
@@ -40,22 +41,13 @@ a, a:visited, a:hover, a:active {
     
     height: 72px;
     display: flex;
-    width: 880px;
+    width: 1200px;
     box-sizing: border-box;
     padding: 0px 32px;
     align-items: center;
     justify-content: space-evenly;
     /*The rule below centers the ul horizontally*/
     margin: 0 auto;
-}
-
-/*A selector for navbar when a details pane is displayed*/
-.navbar.navbar-details-pane ul{
-    width: 1330px;
-}
-
-.navbar.navbar-in-homepage ul{
-    width: 100%;
 }
 
 .navbar-cart{

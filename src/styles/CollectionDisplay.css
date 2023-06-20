@@ -1,8 +1,6 @@
 .collection-container{
-    background-color: white;
-    padding: 32px;
+    padding: 32px 0px;
 }
-
 .collection-container > h2 {
     margin: 20px 0px 20px 54px;
     height: 30px;
@@ -10,7 +8,7 @@
 }
 
 .collection-interface{
-    width: 800px;
+    width: 673px;
     display: flex;
     align-items: center;
     gap: 12px;
@@ -18,12 +16,12 @@
 
 .collection-display{
     display: flex;
-    gap: 32px;
+    gap: 28px;
 }
 
 .collection-display figure{
     margin: 0;
-    width: 150px;
+    width: 125px;
 
 }
 
@@ -31,7 +29,7 @@
     /*Images are inline by default. Inline elements hava a small vertical space to accomodate text on the same line*/
     /*Making the image a block level element removes this issue*/
     display: block;
-    width: 150px;
+    width: 125px;
     height: auto;
 }
 
@@ -61,7 +59,7 @@
     background-color: #242331;
     color: white;
     padding-left: 12px;
-    gap: 16px;
+    gap: 6px;
 }
 
 .poster-text-container button{
