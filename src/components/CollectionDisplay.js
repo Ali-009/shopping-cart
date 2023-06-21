@@ -55,6 +55,7 @@ function CollectionDisplay({header, movieData, currentSelection, setCurrentSelec
                         return (
                             <figure key={movie.id}>
                                 <img id={movie.id} src={movie.poster} alt={movie.title + ' Poster'} onClick={handleSelection}/>
+                                <div className="price-tag">{movie.price}$</div>
                                 <div className="poster-text-container">
                                     <figcaption>{movie.title}</figcaption>
                                     <CartInterface displayedMovies={displayedMovies} movie={movie}

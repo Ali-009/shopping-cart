@@ -27,7 +27,21 @@
     /*In this case, it prevents the .collection-column from scrolling back up during rerenders*/
     width: 125px;
     height: 296px;
+    position: relative;
 
+}
+
+.collection-display figure .price-tag{
+    width: 34.3px;
+    background-color: #242331;
+    color: white;
+    /*The price tag is displayed inside the figure and is positioned absolutely*/
+    position: absolute;
+    font-size: 16px;
+    top: 168.5px;
+    left: 90.7px;
+    padding: 1px 4px;
+    box-sizing: border-box;
 }
 
 .collection-display figure > img{
