@@ -1,6 +1,11 @@
 import '../styles/DetailsPane.css'
 
 function DetailsPane({currentSelection: movie}){
+    //Reset the scrollbar whenever a new .detaisl-pane needs to be rendered
+    const detailsPane = document.querySelector('.details-text-container')
+    if(detailsPane){
+        detailsPane.scrollTop = 0;
+    }
     return(
         <div className='details-pane'>
             <img src={movie.backdrop} alt={movie.title + ' Backdrop'} />

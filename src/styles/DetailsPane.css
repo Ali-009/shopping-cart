@@ -37,4 +37,5 @@
     text-align: center;
     letter-spacing: 3px;
     text-transform: uppercase;
+    white-space: pre-line;
 }
