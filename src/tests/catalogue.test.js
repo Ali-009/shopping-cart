@@ -20,7 +20,7 @@ describe('Displaying Movie Data', () => {
 
     it('Displays the correct number of movie posters', async () => {
         const moviePosters = screen.getAllByRole('figure')
-        expect(moviePosters.length).toBe(8)
+        expect(moviePosters.length).toBe(16)
     })
     it('Displays a different set of movie posters when the forward button is clicked', async () => {
         const user = userEvent.setup()
