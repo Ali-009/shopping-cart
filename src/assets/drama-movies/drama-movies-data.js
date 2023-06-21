@@ -11,6 +11,17 @@ const dramaMovies = [
         price: 20,
     },
     {
+        id: 964980,
+        title: "Air",
+        poster: require('./posters/air-p.jpg'),
+        backdrop: require('./backdrops/air-b.jpg'),
+        genres: ["Drama", "History"],
+        overview: "Discover the game-changing partnership between a then undiscovered Michael Jordan and Nike's fledgling basketball division which revolutionized the world of sports and culture with the Air Jordan brand.",
+        tagline:"Some icons are meant to fly",
+        releaseDate: "2023-04-05",
+        price: 40,
+    },
+    {
         id: 278,
         title: "The Shawshank Redemption",
         poster: require('./posters/shawshank-redemption-p.jpg'),
@@ -43,6 +54,39 @@ const dramaMovies = [
         releaseDate: "1997-11-18",
         price: 20,
     },
+    {
+        id: 49046,
+        title: "All Quiet on the Western Front",
+        poster: require('./posters/all-quiet-on-the-western-front-p.jpg'),
+        backdrop: require('./backdrops/all-quiet-on-the-western-front-b.jpg'),
+        genres: ["Drama", "War"],
+        overview: "Paul Baumer and his friends Albert and Muller, egged on by romantic dreams of heroism, voluntarily enlist in the German army. Full of excitement and patriotic fervour, the boys enthusiastically march into a war they believe in. But once on the Western Front, they discover the soul-destroying horror of World War I.",
+        taagline: '',
+        releaseDate: "2022-10-07",
+        price: 30,
+    },
+    {
+        id: 8587,
+        title: "The Lion King",
+        poster: require('./posters/the-lion-king-p.jpg'),
+        backdrop: require('./backdrops/the-lion-king-b.jpg'),
+        genres: ["Family", "Animation", "Drama"],
+        overview: "A young lion prince is cast out of his pride by his cruel uncle, who claims he killed his father. While the uncle rules with an iron paw, the prince grows up beyond the Savannah, living by a philosophy: No worries for the rest of your days. But when his past comes to haunt him, the young prince must decide his fate: Will he remain an outcast or face his demons and become what he needs to be?",
+        tagline: "Life's greatest adventure is finding your place in the Circle of Life",
+        releaseDate: "1994-06-23",
+        price: 10,
+    },
+    {
+        id: 150540,
+        title: "Inside Out",
+        poster: require('./posters/inside-out-p.jpg'),
+        backdrop: require('./backdrops/inside-out-b.jpg'),
+        genres: ["Animation", "Family", "Adventure", "Drama", "Comedy"],
+        overview: "Growing up can be a bumpy road, and it's no exception for Riley, who is uprooted from her Midwest life when her father starts a new job in San Francisco. Riley's guiding emotions— Joy, Fear, Anger, Disgust and Sadness—live in Headquarters, the control centre inside Riley's mind, where they help advise her through everyday life and tries to keep things positive, but the emotions conflict on how best to navigate a new city, house and school.",
+        tagline: "Meet the little voices inside your head",
+        releaseDate: "2015-06-09",
+        price: 30,
+    }
 ]
 
 export default dramaMovies

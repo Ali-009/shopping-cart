@@ -6,39 +6,33 @@ function ShoppingCart({cart, setCart}){
 
     if(cart.length > 0){
         return(
-            <div className="table-container">
-                <table className="shopping-cart-container">
-                    <thead>
-                        <tr>
-                            <th scope="col"></th>
-                            <th scope="col"></th>
-                            <th scope="col">Quantity</th>
-                            <th scope="col">Price</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {cart.length > 0 && cart.map(((movie, index) => {
-                            return (
-                                <tr key={movie.id} id={movie.id}>
-                                    <td className="movie-poster"><img src={movie.poster} alt={`${movie.title} Poster`} /></td>
-                                    <td className="movie-title">{movie.title}</td>
-                                    <td className="movie-quantity">
-                                        <CartInterface displayedMovies={cart} movie={movie} cart={cart} setCart={setCart}/>
-                                    </td>
-                                    <td className="movie-total-price" data-testid={`price-${movie.id}`}>{movie.quantity * movie.price}$</td>
-                                </tr>
-                            )
-                        }))}
-                    </tbody>
-                    <tfoot>
-                        <tr>
-                            <th id='total' colSpan={3}>Total</th>
-                            <td data-testid='shopping-cart-total'>{cart.length > 0 && cart.reduce((accumulator, currentValue) => {
+            <div className="shopping-cart-container">
+                <div className="cart-header">
+                        <div className='quantity-header'>Quantity</div>
+                        <div className='total-price-header'>Price</div>
+                </div>
+                <div className="cart-items">
+                    {cart.length > 0 && cart.map((movie => {
+                        return (
+                            <div className='cart-movie' key={movie.id} id={movie.id}>
+                                <div className="movie-poster"><img src={movie.poster} alt={`${movie.title} Poster`} /></div>
+                                <div className="movie-title">{movie.title}</div>
+                                <div className="movie-quantity">
+                                    <CartInterface displayedMovies={cart} movie={movie} cart={cart} setCart={setCart}/>
+                                </div>
+                                <div className="movie-total-price" data-testid={`price-${movie.id}`}>{movie.quantity * movie.price}$</div>
+                            </div>
+                        )
+                    }))}
+                </div>
+                <div className="cart-footer">
+                        <div className='cart-total-footer'>Total</div>
+                        <div className='shopping-cart-total' data-testid='shopping-cart-total'>
+                            {cart.length > 0 && cart.reduce((accumulator, currentValue) => {
                                 return accumulator + (currentValue.price * currentValue.quantity)
-                            }, 0)}$</td>
-                        </tr>
-                    </tfoot>
-                </table>
+                            }, 0)}$
+                        </div>
+                </div>
             </div>
         )
     } else {

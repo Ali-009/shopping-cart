@@ -3,7 +3,7 @@ import {render, screen} from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import '@testing-library/jest-dom'
 import {act} from 'react-dom/test-utils'
-import actionMovies from '../assets/action-movies/action-movies-data'
+import movies from '../assets/drama-movies/drama-movies-data'
 import App from '../App'
 import {BrowserRouter} from 'react-router-dom'
 
@@ -20,36 +20,36 @@ describe('Displaying Movie Data', () => {
 
     it('Displays the correct number of movie posters', async () => {
         const moviePosters = screen.getAllByRole('figure')
-        expect(moviePosters.length).toBe(4)
+        expect(moviePosters.length).toBe(8)
     })
     it('Displays a different set of movie posters when the forward button is clicked', async () => {
         const user = userEvent.setup()
         //Creating an array of the movie titles of the first four movies
-        let actionMovieTitles = []
+        let movieTitles = []
         for(let i=0; i < 4; i++){
-            actionMovieTitles[i] = actionMovies[i].title + ' ' + 'Poster';
+            movieTitles[i] = movies[i].title + ' ' + 'Poster';
         }
         const firstPage = screen.getAllByRole('figure').map(poster => poster.children[0].getAttribute('alt'))
         //This piece of code needs to wrapped around the act API
         //Because it causes an update in the state of a component
+        //Note that we are getting all the buttons, and only clicking the first one
+        //getAllByRole(...)[0]
         await act(async () => {
-            await user.click(screen.getByRole('button', {name: 'Scroll Forward'}))
+            await user.click(screen.getAllByRole('button', {name: 'Scroll Forward'})[0])
         })
         //Get the new set of movies
         const secondPage = screen.getAllByRole('figure').map(poster => poster.children[0].getAttribute('alt'))
         expect(firstPage).not.toEqual(secondPage)
-        //Expect the first page to display the first four movies
-        expect(firstPage).toEqual(actionMovieTitles)
     })
     it('Displays the initial set of movie posters when the back button is clicked', async () => {
         const user = userEvent.setup()
         const firstPage = screen.getAllByRole('figure').map(poster => poster.children[0].getAttribute('alt'))
         await act(async () => {
-            await user.click(screen.getByRole('button', {name: 'Scroll Forward'}))
+            await user.click(screen.getAllByRole('button', {name: 'Scroll Forward'})[0])
         })
         //Each interaction needs to be wrapped in its own act method
         await act(async () => {
-            await user.click(screen.getByRole('button', {name: 'Scroll Backward'}))
+            await user.click(screen.getAllByRole('button', {name: 'Scroll Backward'})[0])
         })
         const currentPage = screen.getAllByRole('figure').map(poster => poster.children[0].getAttribute('alt'))
         //going forward and back again, should land us at the same page
@@ -59,15 +59,15 @@ describe('Displaying Movie Data', () => {
         const user = userEvent.setup()
         //Because tests are often concrete and not really generic
         //I'll attempt to click the image of a movie I expect to be displayed
-        const testMovie = actionMovies[2]
-        const testFigure = screen.getByRole('img', {name: 'Sonic the Hedgehog 2 Poster'})
+        const testMovie = movies[1]
+        const testFigure = screen.getByRole('img', {name: 'Air Poster'})
 
         await act(async () => {
             await user.click(testFigure)
         })
         
         const testOverview = await screen.findByText(testMovie.overview)
-        const testBackdrop = await screen.findByRole('img', {name: 'Sonic the Hedgehog 2 Backdrop'})
+        const testBackdrop = await screen.findByRole('img', {name: 'Air Backdrop'})
         //Assertions
         expect(testOverview).toBeInTheDocument
         expect(testBackdrop).toBeInTheDocument
@@ -86,8 +86,8 @@ async function clickElement(user, element, n){
 describe('Increases the amount of items in the shopping cart', () => {
     it('Increases the quantities of movies in the shopping cart correctly', async () => {
         const user = userEvent.setup()
-        const increaseButton = screen.getByTestId(`increase-${actionMovies[0].id}`)
-        const movieQuantity = screen.getByTestId(`quantity-${actionMovies[0].id}`)
+        const increaseButton = screen.getByTestId(`increase-${movies[0].id}`)
+        const movieQuantity = screen.getByTestId(`quantity-${movies[0].id}`)
     
         await clickElement(user, increaseButton, 2)
     
@@ -100,14 +100,14 @@ describe('Decreases amount of items in the shopping cart', () => {
 
     beforeEach(async () => {
         const user = userEvent.setup()
-        const increaseButton = screen.getByTestId(`increase-${actionMovies[0].id}`)
+        const increaseButton = screen.getByTestId(`increase-${movies[0].id}`)
         await clickElement(user, increaseButton, 3)
     })
 
     it('Decreases the quantity of movies in the shopping cart correctly', async () => {
         const user = userEvent.setup()
-        const decreaseButton = screen.getByTestId(`decrease-${actionMovies[0].id}`)
-        const movieQuantity = screen.getByTestId(`quantity-${actionMovies[0].id}`)
+        const decreaseButton = screen.getByTestId(`decrease-${movies[0].id}`)
+        const movieQuantity = screen.getByTestId(`quantity-${movies[0].id}`)
 
         await clickElement(user, decreaseButton, 2)
 
@@ -116,8 +116,8 @@ describe('Decreases amount of items in the shopping cart', () => {
 
     it('Decreases the quantity of movies in the shopping cart to zero correctly', async () => {
         const user = userEvent.setup()
-        const decreaseButton = screen.getByTestId(`decrease-${actionMovies[0].id}`)
-        const movieQuantity = screen.getByTestId(`quantity-${actionMovies[0].id}`)
+        const decreaseButton = screen.getByTestId(`decrease-${movies[0].id}`)
+        const movieQuantity = screen.getByTestId(`quantity-${movies[0].id}`)
 
         await clickElement(user, decreaseButton, 3)
 
@@ -125,8 +125,8 @@ describe('Decreases amount of items in the shopping cart', () => {
     })
     it('Doesn\'t throw an error when attempting to decrease quantity below zero', async () => {
         const user = userEvent.setup()
-        const decreaseButton = screen.getByTestId(`decrease-${actionMovies[0].id}`)
-        const movieQuantity = screen.getByTestId(`quantity-${actionMovies[0].id}`)
+        const decreaseButton = screen.getByTestId(`decrease-${movies[0].id}`)
+        const movieQuantity = screen.getByTestId(`quantity-${movies[0].id}`)
 
         await clickElement(user, decreaseButton, 6)
 

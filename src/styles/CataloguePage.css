@@ -18,7 +18,7 @@
     flex-flow: column;
     align-items: center;
     /*Make the collection column scrollable on its own*/
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 .details-pane{

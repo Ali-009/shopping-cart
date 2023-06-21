@@ -6,7 +6,8 @@ import actionMovies from '../assets/action-movies/action-movies-data';
 import dramaMovies from '../assets/drama-movies/drama-movies-data';
 
 function CataloguePage({cart, setCart}) {
-    const [currentSelection, setCurrentSelection] = useState(dramaMovies[0])
+    //The initial selection is a random movie from the first four movies displayed
+    const [currentSelection, setCurrentSelection] = useState(dramaMovies[Math.floor(Math.random() * 4)])
     return (
       <div className='catalogue-page'>
         <div className="collections-column">

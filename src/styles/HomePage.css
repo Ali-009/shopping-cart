@@ -5,6 +5,10 @@
     margin: 0 auto;
 }
 
+.navbar-in-homepage ul{
+    width: 100%;
+}
+
 .homepage-container > img {
     z-index: 0;
     width: 100%;
