@@ -22,8 +22,8 @@ function App() {
           <li className='navbar-cart'>
             <Link to='/shopping-cart'>
               <img src={cartIcon} alt="Shopping Cart"/> 
+              {`  ${cart.reduce((sum, currentItem) => sum + (currentItem.price * currentItem.quantity), 0)}$`}
            </Link>
-           {`  ${cart.reduce((sum, currentItem) => sum + (currentItem.price * currentItem.quantity), 0)}$`}
           </li>
         </ul>
       </nav>
