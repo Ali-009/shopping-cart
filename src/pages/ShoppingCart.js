@@ -3,7 +3,6 @@ import '../styles/ShoppingCart.css'
 import '../styles/CartIsEmpty.css'
 
 function ShoppingCart({cart, setCart}){
-
     if(cart.length > 0){
         return(
             <div className="shopping-cart-container">
