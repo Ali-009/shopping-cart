@@ -62,7 +62,7 @@
 
 .cart-movie .movie-quantity > .cart-interface{
     display: flex;
-    flex-flow: row;
+    flex-flow: row-reverse;
     width: 100px;
 }
 

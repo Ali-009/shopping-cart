@@ -1,8 +1,11 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap');
+
 .homepage-container{
     width: 100%;
     overflow-y: hidden;
     margin: 0 auto;
+    position: relative;
 }
 
 .navbar-in-homepage ul{
@@ -15,6 +18,20 @@
     height: auto;
 }
 
-.homepage-container > h1{
+.homepage-container > h2{
     z-index: 1;
+    font-size: 52px;
+    position: absolute;
+    width: 400px;
+    bottom: 0px;
+    left: 0px;
+    margin: 72px;
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 1px;
+    line-height: 64px;
+    color: white;
+}
+
+.homepage-container > h2 > a{
+    color: #7eace7;
 }

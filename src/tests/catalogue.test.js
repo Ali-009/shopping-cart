@@ -33,7 +33,7 @@ describe('Displaying Movie Data', () => {
         //This piece of code needs to wrapped around the act API
         //Because it causes an update in the state of a component
         //Note that we are getting all the buttons, and only clicking the first one
-        //getAllByRole(...)[0]
+        //This is done using getAllByRole(...)[0]
         await act(async () => {
             await user.click(screen.getAllByRole('button', {name: 'Scroll Forward'})[0])
         })

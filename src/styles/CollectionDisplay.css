@@ -42,6 +42,7 @@
     left: 90.7px;
     padding: 1px 4px;
     box-sizing: border-box;
+    cursor: default;
 }
 
 .collection-display figure > img{
