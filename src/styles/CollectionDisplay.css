@@ -50,11 +50,13 @@
     display: block;
     width: 125px;
     height: 187.5px;
+    cursor: pointer;
 }
 
 .collection-display figcaption{
     word-break: normal;
     font-size: 14px;
+    cursor: default;
 }
 
 .collection-interface button{
