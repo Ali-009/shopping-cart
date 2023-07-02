@@ -29,6 +29,6 @@
 }
 
 .details-text-container{
-    overflow-y: scroll;
+    overflow-y: auto;
     padding-bottom: 48px;
 }
