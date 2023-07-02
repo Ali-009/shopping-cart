@@ -5,13 +5,13 @@ import '@testing-library/jest-dom'
 import {act} from 'react-dom/test-utils'
 import movies from '../assets/drama-movies/drama-movies-data'
 import App from '../App'
-import {BrowserRouter} from 'react-router-dom'
+import {HashRouter} from 'react-router-dom'
 
 beforeEach(async () =>{
     //The localStorage should be cleared before performing the tests
     localStorage.clear()
     const user = userEvent.setup()
-    render(<App />, {wrapper: BrowserRouter})
+    render(<App />, {wrapper: HashRouter})
     const cataloguePageLink = screen.getByText('Catalogue')
     await clickElement(user, cataloguePageLink, 1)
 })

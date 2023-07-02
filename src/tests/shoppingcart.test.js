@@ -5,7 +5,7 @@ import '@testing-library/jest-dom'
 import {act} from 'react-dom/test-utils'
 import actionMovies from '../assets/action-movies/action-movies-data'
 import App from '../App'
-import {BrowserRouter} from 'react-router-dom'
+import {HashRouter} from 'react-router-dom'
 
 //An asynchronous function that clicks a given element an n number of times
 async function clickElement(user, element, n){
@@ -19,7 +19,7 @@ async function clickElement(user, element, n){
 beforeEach(async () => {
     //The localStorage needs to be cleared before performing the tests
     localStorage.clear()
-    render(<App />, {wrapper: BrowserRouter})
+    render(<App />, {wrapper: HashRouter})
     const user = userEvent.setup()
     //The shopping cart needs to be populated before performing tests on it
     const cataloguePageLink = screen.getByText('Catalogue')
